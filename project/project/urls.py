@@ -20,5 +20,9 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.find_doctor, name='find_doctor'),
     path('navbar/', views.navbar, name='navbar'),
+    path('login/', views.login, name='login'),
+    path('video_consult/', views.video_consult, name='video_consult'),
+    path('surgeries/', views.surgeries, name='surgeries'),
 ]
