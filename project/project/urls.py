@@ -19,9 +19,11 @@ from django.urls import path
 from app import views
 
 urlpatterns = [
+    path("__reload__/",include("django_Browser_reload.urls/")),
     path('admin/', admin.site.urls),
-    path('', views.find_doctor, name='find_doctor'),
-    path('navbar/', views.navbar, name='navbar'),
+    path('', views.home, name='home'),
+    path('find_doctor', views.find_doctor, name='find_doctor'),
+    path('base/', views.base, name='base'),
     path('login/', views.login, name='login'),
     path('video_consult/', views.video_consult, name='video_consult'),
     path('surgeries/', views.surgeries, name='surgeries'),

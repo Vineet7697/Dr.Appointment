@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<div class="search-bar">
+  <div class="search-box">
+    <i class="fa-solid fa-location-dot"></i>
+    <input type="text" placeholder="Location" />
+  </div>
+
+  <div class="search-box box2">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input
+      type="text"
+      placeholder="Search doctor, clinics, hospitals, etc."
+    />
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row justify-content-center g-4 align-items-stretch c">
+
+    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+      <div class="card1 card text-left flex-fill">
+        <img src="{% static 'images/video_consultation.png' %}" class="card-img-top custom-img1" alt="Video Consultation">
+        <div class="card-body">
+          <h5 class="card-title">Instant Video Consultation</h5>
+          <p class="card-text"><small class="text-muted">Connect within 60 secs</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+      <div class="card2 card text-left flex-fill">
+        <img src="{% static 'images/find_doctors.png' %}" class="card-img-top custom-img2" alt="Find Doctor">
+        <div class="card-body">
+          <h5 class="card-title">Find Doctors Near You</h5>
+          <p class="card-text"><small class="text-muted">Confirmed appointments</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+      <div class="card3 card text-left flex-fill">
+        <img src="{% static 'images/lab_tests.png' %}" class="card-img-top custom-img3" alt="Lab Tests">
+        <div class="card-body">
+          <h5 class="card-title">Lab Tests</h5>
+          <p class="card-text"><small class="text-muted">Safe and trusted lab tests</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+      <div class="card card4 text-left flex-fill">
+        <img src="{% static 'images/surgeries.png' %}" class="card-img-top custom-img4" alt="Surgeries">
+        <div class="card-body">
+          <h5 class="card-title">Surgeries</h5>
+          <p class="card-text"><small class="text-muted">Safe and trusted surgery centers</small></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+{% endblock content %}
