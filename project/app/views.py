@@ -19,3 +19,6 @@ def video_consult(request):
 
 def surgeries(request):
     return render(request,'surgeries.html')
+
+def footer(request):
+    return render(request,'footer.html')

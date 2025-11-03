@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'app',
     'tailwind',
     'theme',
-    'django_browser_reload',
+    "django_browser_reload",
    
 ]
 TAILWIND_APP_NAME='theme'
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
     
-    'django.browser_reload.middleware.BrowserReloadMiddleware',   # deploy time remove this line 
+    "django_browser_reload.middleware.BrowserReloadMiddleware",   # deploy time remove this line 
 ]
 
 ROOT_URLCONF = 'project.urls'

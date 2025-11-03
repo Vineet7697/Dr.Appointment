@@ -1,71 +1,349 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static tailwind_tags %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% tailwind_css %}
 {% endblock css %}
 
 {% block content %}
-<div class="search-bar">
-  <div class="search-box">
-    <i class="fa-solid fa-location-dot"></i>
-    <input type="text" placeholder="Location" />
+
+<!-- Search Bar -->
+<div class="flex justify-start items-center  p-6">
+  <!-- Location Input -->
+  <div class="relative">
+    <i class="fa-solid fa-location-dot absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+    <input
+      type="text"
+      placeholder="Location"
+      class="pl-10 pr-4 py-2 border border-gray-300 outline-none focus:ring-2 focus:ring-blue-400 w-72"
+    />
   </div>
 
-  <div class="search-box box2">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <!-- Search Input -->
+  <div class="relative">
+    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
     <input
       type="text"
       placeholder="Search doctor, clinics, hospitals, etc."
+      class="pl-10 pr-4 py-2 border border-gray-300  outline-none focus:ring-2 focus:ring-blue-400 w-96"
     />
   </div>
 </div>
-<div class="container mt-5">
-  <div class="row justify-content-center g-4 align-items-stretch c">
 
-    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
-      <div class="card1 card text-left flex-fill">
-        <img src="{% static 'images/video_consultation.png' %}" class="card-img-top custom-img1" alt="Video Consultation">
-        <div class="card-body">
-          <h5 class="card-title">Instant Video Consultation</h5>
-          <p class="card-text"><small class="text-muted">Connect within 60 secs</small></p>
-        </div>
+<!-- Cards Section -->
+<div class="container mx-auto px-30 mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+  <!-- Card 1 -->
+  <div class=" from-blue-100 to-white rounded-3xl shadow-md hover:shadow-xl transition overflow-hidden">
+    <div class="bg-[#BFD6F8] h-48 flex items-center justify-center">
+      <img src="{% static 'images/video_consultation.png' %}" alt="Video Consultation" class="h-40 object-contain" />
+    </div>
+    <div class="bg-white p-5 rounded-b-3xl">
+      <h3 class="font-semibold text-lg text-gray-800">Instant Video Consultation</h3>
+      <p class="text-gray-500 text-sm">Connect within 60 secs</p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class=" from-cyan-100 to-white rounded-3xl shadow-md hover:shadow-xl transition overflow-hidden">
+    <div class="bg-[#C5E6EC] h-48 flex items-center justify-center">
+      <img src="{% static 'images/find_doctors.png' %}" alt="Find Doctors" class="h-40 object-contain" />
+    </div>
+    <div class="bg-white p-5 rounded-b-3xl">
+      <h3 class="font-semibold text-lg text-gray-800">Find Doctors Near You</h3>
+      <p class="text-gray-500 text-sm">Confirmed appointments</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class=" from-indigo-100 to-white rounded-3xl shadow-md hover:shadow-xl transition overflow-hidden">
+    <div class="bg-[#DDE1FD] h-48 flex items-center justify-center">
+      <img src="{% static 'images/lab_tests.png' %}" alt="Lab Tests" class="h-40 object-contain" />
+    </div>
+    <div class="bg-white p-5 rounded-b-3xl">
+      <h3 class="font-semibold text-lg text-gray-800">Lab Tests</h3>
+      <p class="text-gray-500 text-sm">Safe and trusted lab tests</p>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class=" from-purple-100 to-white rounded-3xl shadow-md hover:shadow-xl transition overflow-hidden">
+    <div class="bg-[#E3E2FB] h-48 flex items-center justify-center">
+      <img src="{% static 'images/surgeries.png' %}" alt="Surgeries" class="h-40 object-contain" />
+    </div>
+    <div class="bg-white p-5 rounded-b-3xl">
+      <h3 class="font-semibold text-lg text-gray-800">Surgeries</h3>
+      <p class="text-gray-500 text-sm">Safe and trusted surgery centers</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="text-center mt-10">
+  <div class="flex justify-between items-center">
+   <div>
+     <h2 class="text-2xl font-semibold text-gray-800">
+    Consult top doctors online for any health concern
+  </h2>
+  <p class="text-gray-500 mt-2 text-left">
+    Private online consultations with verified doctors in all specialties
+  </p>
+   </div>
+
+  <button type="button" class="border border-[#14BEF0] text-[#14BEF0] p-2 px-4 rounded-md cursor-pointer hover:bg-[#14BEF0] hover:text-white transition">
+  View All Specialities
+</button>
+
+  </div>
+
+  <div class="flex justify-center gap-16 flex-wrap mt-8">
+    <div class="flex flex-col items-center">
+      <img src="{% static 'images/period.png' %}" alt="Period Doubt Pregnancy" class="h-24 w-24 object-contain">
+      <p class="text-gray-600 text-sm mt-2">Period Doubt Pregnancy</p>
+      <a href="#" class="text-[#14BEF0] font-semibold text-sm transition">
+  CONSULT NOW
+</a>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="{% static 'images/Acne.png' %}" alt="Acne, Pimple or skin issues" class="h-24 w-24 object-contain">
+      <p class="text-gray-600 text-sm mt-2">Acne, Pimple or skin issues</p>
+      <a href="#" class="text-[#14BEF0] font-semibold text-sm transition">
+  CONSULT NOW
+</a>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="{% static 'images/sexology.svg' %}" alt="Performance issue in bed" class="h-24 w-24 object-contain">
+      <p class="text-gray-600 text-sm mt-2">Performance issue in bed</p>
+     <a href="#" class="text-[#14BEF0] font-semibold text-sm transition">
+  CONSULT NOW
+</a>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="{% static 'images/coughing.png' %}" alt="Cold, cough or fever" class="h-24 w-24 object-contain">
+      <p class="text-gray-600 text-sm mt-2">Cold, cough or fever</p>
+      <a href="#" class="text-[#14BEF0] font-semibold text-sm transition">
+  CONSULT NOW
+</a>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="{% static 'images/pediatric.svg' %}" alt="Child not feeling well" class="h-24 w-24 object-contain">
+      <p class="text-gray-600 text-sm mt-2">Child not feeling well</p>
+      <a href="#" class="text-[#14BEF0] font-semibold text-sm transition">
+  CONSULT NOW
+</a>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="{% static 'images/wellness.png' %}" alt="Depression or anxiety" class="h-24 w-24 object-contain">
+      <p class="text-gray-600 text-sm mt-2">Depression or anxiety</p>
+      <a href="#" class="text-[#14BEF0] font-semibold text-sm transition">
+  CONSULT NOW
+</a>
+    </div>
+  </div>
+</div>
+
+<!--  -->
+<div class="mt-12 px-8">
+  <h2 class="text-2xl font-semibold text-gray-800 ">
+    Book an appointment for an in-clinic consultation
+  </h2>
+  <p class="text-gray-500 mt-2 ">
+    Find experienced doctors across all specialties
+  </p>
+
+  <!-- ✅ Swiper Container -->
+  <div class="swiper mt-8">
+    <div class="swiper-wrapper">
+      <!-- Each slide -->
+      <div class="swiper-slide flex flex-col items-center  transition">
+        <img src="{% static 'images/sp-dentist@2x.jpg' %}" alt="Dentist"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 hover:text-[#14BEF0] transition cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">Dentist</h3>
+        <p class="text-sm text-gray-500">Teething troubles? Schedule a dental checkup</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] cursor-pointertransition">
+        <img src="{% static 'images/sp-gynecologist@2x.jpg' %}" alt="Gynecologist"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">Gynecologist/Obstetrician</h3>
+        <p class="text-sm text-gray-500">Explore for women's health, pregnancy and infertility treatments</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] cursor-pointer transition">
+        <img src="{% static 'images/sp-dietitian@2x.jpg' %}" alt="Dietitian"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">Dietitian/Nutrition</h3>
+        <p class="text-sm text-gray-500">Guidance on eating right, weight management & sports nutrition</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] cursor-pointer transition">
+        <img src="{% static 'images/sp-physiotherapist@2x.jpg' %}" alt="Physiotherapist"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">Physiotherapist</h3>
+        <p class="text-sm text-gray-500">Pulled a muscle? Get it treated by a trained physiotherapist</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] cursor-pointer transition ">
+        <img src="{% static 'images/sp-general-surgeon@2x.jpg' %}" alt="General Surgeon"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">General Surgeon</h3>
+        <p class="text-sm text-gray-500">Need to get operated? Find the right surgeon</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] cursor-pointer transition ">
+        <img src="{% static 'images/sp-orthopedist@2x.jpg' %}" alt="Orthopedist"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">Orthopedist</h3>
+        <p class="text-sm text-gray-500">For bone & joint issues, spinal injuries and more</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] cursor-pointer transition ">
+        <img src="{% static 'images/sp-general-doctor@2x.jpg' %}" alt="General Physician"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">General Physician</h3>
+        <p class="text-sm text-gray-500">Find the right family doctor in your neighborhood</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] transition">
+        <img src="{% static 'images/sp-pediatrician@2x.jpg' %}" alt="Pediatrician"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">Pediatrician</h3>
+        <p class="text-sm text-gray-500">Child specialists and doctors for infants</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center hover:text-[#14BEF0] transition">
+        <img src="{% static 'images/sp-gastroenterologist@2x.jpg' %}" alt="Gastroenterologist"
+             class="h-48 w-60 object-cover rounded-xl shadow-md hover:scale-105 transition hover:text-[#14BEF0] cursor-pointer"/>
+        <h3 class="mt-2 text-gray-700 font-medium hover:text-[#14BEF0] cursor-pointer">Gastroenterologist</h3>
+        <p class="text-sm text-gray-500">Digestive system, liver and pancreas related issues</p>
       </div>
     </div>
 
-    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
-      <div class="card2 card text-left flex-fill">
-        <img src="{% static 'images/find_doctors.png' %}" class="card-img-top custom-img2" alt="Find Doctor">
-        <div class="card-body">
-          <h5 class="card-title">Find Doctors Near You</h5>
-          <p class="card-text"><small class="text-muted">Confirmed appointments</small></p>
-        </div>
-      </div>
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+
+<div class="mt-12 px-8 flex flex-col lg:flex-row justify-between gap-16 border-t border-b border-gray-200 p-10 mb-20">
+  
+  <!-- Left Section -->
+  <div class="lg:w-1/3">
+    <h2 class="text-2xl font-semibold text-gray-800">
+      Read top articles from health experts
+    </h2>
+    <p class="text-gray-500 mt-2">
+      Health articles that keep you informed about good health practices and help you achieve your goals.
+    </p>
+    <button class="mt-4 bg-[#14BEFD] text-white px-6 py-2 rounded hover:bg-blue-600 transition">
+      See all articles
+    </button>
+  </div>
+
+  <!-- Right Section -->
+  <div class="flex flex-wrap lg:flex-nowrap gap-8 justify-center lg:justify-end">
+    
+    <!-- Article Card 1 -->
+    <div class="w-72">
+      <a href="#">
+        <img src="{% static 'images/injection.jpeg' %}" alt="Injection" class="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
+      </a>
+      <h4 class="text-[#14BEFD] font-semibold mt-3 uppercase tracking-wide text-sm">Coronavirus</h4>
+      <h3 class="font-semibold text-gray-800 mt-1 leading-tight">
+        12 Coronavirus Myths and Facts That You Should Be Aware Of
+      </h3>
+      <p class="text-gray-500 text-sm mt-1">Dr. Diana Borgio</p>
     </div>
 
-    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
-      <div class="card3 card text-left flex-fill">
-        <img src="{% static 'images/lab_tests.png' %}" class="card-img-top custom-img3" alt="Lab Tests">
-        <div class="card-body">
-          <h5 class="card-title">Lab Tests</h5>
-          <p class="card-text"><small class="text-muted">Safe and trusted lab tests</small></p>
-        </div>
-      </div>
+    <!-- Article Card 2 -->
+    <div class="w-72">
+      <a href="#">
+        <img src="{% static 'images/vegetables.jpeg' %}" alt="Vegetables" class="rounded-lg shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
+      </a>
+      <h4 class="text-[#14BEFD] font-semibold mt-3 uppercase tracking-wide text-sm">Vitamin and Supplements</h4>
+      <h3 class="font-semibold text-gray-800 mt-1 leading-tight">
+        Eating Right to Build Immunity Against Cold and Viral Infections
+      </h3>
+      <p class="text-gray-500 text-sm mt-1">Dr. Diana Borgio</p>
     </div>
 
-    <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
-      <div class="card card4 text-left flex-fill">
-        <img src="{% static 'images/surgeries.png' %}" class="card-img-top custom-img4" alt="Surgeries">
-        <div class="card-body">
-          <h5 class="card-title">Surgeries</h5>
-          <p class="card-text"><small class="text-muted">Safe and trusted surgery centers</small></p>
-        </div>
-      </div>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="mt-16 px-8 py-12 ">
+  <h3 class="text-2xl font-semibold text-gray-800 text-center mb-10">
+    What our users have to say
+  </h3>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- Card 1 -->
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <p class="text-gray-600 leading-relaxed text-center">
+        “Very helpful. Far easier than doing the same thing on computer.
+        Allows quick and easy search with speedy booking.
+        Even maintains history of doctor visits.”
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <p class="text-gray-600 leading-relaxed text-center">
+        “Very easy to book and maintain history.
+        Hassle-free compared to older appointment systems via telephone.
+        Thanks Practo for making it simple!”
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <p class="text-gray-600 leading-relaxed text-center">
+        “Very good app! Well thought-out for booking, rescheduling, and cancelling appointments.
+        The doctor feedback mechanism is great and well-designed.”
+      </p>
     </div>
 
   </div>
 </div>
 
+
+{% block scripts %}
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 4 },
+    },
+  });
+</script>
+{% endblock scripts %}
 
 
 
