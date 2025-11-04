@@ -12,7 +12,15 @@ def login(request):
     return render(request,'login.html')
 
 def find_doctor(request):
-    return render(request,'find_doctor.html')
+    services = [
+        {"icon": "fas fa-user-md", "text": "Consult with a doctor"},
+        {"icon": "fas fa-shopping-cart", "text": "Order Medicines"},
+        {"icon": "fas fa-file-medical", "text": "View medical records"},
+        {"icon": "fas fa-flask", "text": "Book test"},
+        {"icon": "fas fa-book", "text": "Read articles"},
+        {"icon": "fas fa-briefcase", "text": "For healthcare providers"},
+    ]
+    return render(request,'find_doctor.html',{"service":services})
 
 def video_consult(request):
     return render(request,'video_consult.html')

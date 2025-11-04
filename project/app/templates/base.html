@@ -11,10 +11,10 @@
     <title>{% block title %}Doctor Appointment{% endblock title %}</title>
   </head>
 
-  <body class="bg-white text-gray-800">
+  <body class="bg-white text-gray-800 ">
 
     <!-- NAVBAR -->
-    <nav class="bg-white border-b border-gray-200 shadow-sm">
+    <nav class="bg-white border-b border-gray-200 shadow-sm bg-fixed">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
 
@@ -24,7 +24,7 @@
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center space-x-6">
             <a href="{% url 'find_doctor' %}" class="hover:text-blue-600 {% if request.resolver_match.url_name == 'find_doctor' %}text-blue-600 font-semibold{% endif %}">
-              Find Doctor
+              Find Doctors
             </a>
             <a href="{% url 'video_consult' %}" class="hover:text-blue-600 {% if request.resolver_match.url_name == 'video_consult' %}text-blue-600 font-semibold{% endif %}">
               Video Consult

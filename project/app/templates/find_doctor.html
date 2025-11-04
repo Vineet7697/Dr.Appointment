@@ -1,8 +1,177 @@
-
 {% extends "base.html" %}
+{% load static tailwind_tags %}
+
+{% block css %}
+  {% tailwind_css %}
+{% endblock css %}
 
 {% block content %}
 
-<h1>Find Doctor</h1>
+
+<!--  HERO SECTION -->
+<!-- ============================= -->
+<section
+  class="relative w-full h-screen flex flex-col items-center justify-center text-white overflow-hidden px-4 sm:px-6 lg:px-12"
+>
+  <!-- Background Image -->
+ <div
+  class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+   style="background-image: url('{% static "images/images/hero.png" %}');"></div>
+
+  <!-- Overlay (optional for readability) -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Hero Text & Search -->
+  <div class="relative z-10 text-center space-y-6 w-full max-w-4xl">
+    <!-- Heading -->
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
+      Your Doctor Your Health
+    </h1>
+         <span class="text-2xl"> Find and Book</span>
+
+    
+    <!-- SEARCH BAR -->
+    <form
+      method="get"
+      class="flex flex-col sm:flex-row justify-center items-center gap-1 mt-8"
+    >
+      <!-- City Input -->
+      <div class="relative w-full sm:w-48 md:w-64">
+        <div
+          class="flex items-center bg-white text-black px-4 py-2 rounded-lg border w-full"
+        >
+          <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+          <input
+            id="cityInput"
+            name="city"
+            type="text"
+            placeholder="Location"
+            class="outline-none bg-transparent w-full"
+            autocomplete="off"
+          />
+        </div>
+        <ul
+          id="cityList"
+          class="hidden absolute top-full left-0 w-full bg-white border border-gray-300 mt-1 overflow-y-auto shadow-md z-20 max-h-40 text-black"
+        ></ul>
+      </div>
+
+      <!-- Disease Input -->
+      <div class="flex w-full sm:w-auto">
+        <div class="relative w-full sm:w-64 md:w-96">
+          <div
+            class="flex items-center bg-white text-black px-4 py-2 rounded-lg w-full"
+          >
+            <i class="fas fa-search mr-2 text-blue-600"></i>
+            <input
+              id="diseaseInput"
+              name="disease"
+              type="text"
+              placeholder="Search diseases, doctors, clinics..."
+              class="outline-none bg-transparent w-full"
+              autocomplete="off"
+            />
+          </div>
+          <ul
+            id="diseaseList"
+            class="hidden absolute top-full left-0 w-full bg-white border border-gray-300 mt-1 overflow-y-auto shadow-md z-20 max-h-40 text-black"
+          ></ul>
+        </div>
+      </div>
+    </form>
+
+  
+    <!--  POPULAR SEARCHES -->
+    <div
+      class="flex flex-wrap items-center justify-center gap-4 text-white text-sm md:text-base mt-6">
+      <span class="font-semibold text-gray-200">Popular Searches:</span>
+
+      <div class="flex items-center gap-2">
+        <i class="fas fa-stethoscope"></i> Dermatologist
+      </div>
+
+      <span class="text-gray-400">|</span>
+
+      <div class="flex items-center gap-2">
+        <i class="fas fa-baby"></i> Pediatrician
+      </div>
+
+      <span class="text-gray-400">|</span>
+
+      <div class="flex items-center gap-2">
+        <i class="fas fa-heartbeat"></i> Gynecologist
+      </div>
+
+      <span class="text-gray-400">|</span>
+
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tooth"></i> Dentist
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--  SECURITY SECTION -->
+<section class=" relative py-16 px-6 md:px-20  text-gray-800">
+
+  <!-- Security Info -->
+  <div class="flex flex-col md:flex-row justify-around items-center gap-10">
+    <!-- Text -->
+    <div class="text-center md:text-left max-w-lg">
+      <h2 class="text-3xl md:text-4xl font-semibold leading-snug">
+        Safety of your data is our
+      </h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">top priority.</h2>
+
+      <ul class="space-y-3 mb-8">
+        <li>✔ Multi-level security checks</li>
+        <li>✔ Multiple data backups</li>
+        <li>✔ Stringent data privacy policies</li>
+      </ul>
+
+      <button class="bg-blue-500 text-white px-6 py-2 rounded font-medium hover:bg-blue-600">
+        Read more
+      </button>
+    </div>
+
+    <!-- Image -->
+    <div class="flex justify-center md:w-1/2">
+      <img
+        src="{% static 'images/images/men.png' %}"
+        alt="Data Security Illustration"
+        class=" w-60 h-60"
+      />
+    </div>
+  </div>
+ <div class="flex flex-wrap justify-center items-center gap-16 mt-20 text-center">
+  <!-- Card 1 -->
+  <div class="flex flex-col items-center">
+    <img src="{% static 'images/images/encryption.png' %}" alt="256-bit encryption" class="w-14 h-14 mb-2">
+    <p class="text-gray-700 font-medium">256-bit encryption</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="flex flex-col items-center">
+    <img src="{% static 'images/images/certified.png' %}" alt="ISO 27001 certified" class="w-14 h-14 mb-2">
+    <p class="text-gray-700 font-medium">ISO 27001 certified</p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="flex flex-col items-center">
+    <img src="{% static 'images/images/complaints.png' %}" alt="HIPAA compliant data centers" class="w-14 h-14 mb-2">
+    <p class="text-gray-700 font-medium">HIPAA compliant data centers</p>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="flex flex-col items-center">
+    <img src="{% static 'images/images/member.png' %}" alt="DSCI member" class="w-14 h-14 mb-2">
+    <p class="text-gray-700 font-medium">DSCI member</p>
+  </div>
+</div>
+
+ 
+</section>
 
 {% endblock content %}
