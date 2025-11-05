@@ -318,32 +318,14 @@
 </div>
 
 
-{% block scripts %}
+{% block js %}
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'js/homescript.js' %}"></script>
 
 <!-- Initialize Swiper -->
-<script>
-  const swiper = new Swiper('.swiper', {
-    slidesPerView: 4,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      320: { slidesPerView: 1 },
-      640: { slidesPerView: 2 },
-      1024: { slidesPerView: 4 },
-    },
-  });
-</script>
-{% endblock scripts %}
+
+{% endblock js %}
 
 
 

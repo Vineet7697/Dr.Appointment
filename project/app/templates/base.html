@@ -14,7 +14,7 @@
   <body class="bg-white text-gray-800 ">
 
     <!-- NAVBAR -->
-    <nav class="bg-white border-b border-gray-200 shadow-sm bg-fixed">
+    <nav class="bg-white border-b border-gray-200 shadow-sm ">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
 
@@ -107,19 +107,13 @@
     <!-- MAIN CONTENT -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
       {% block content %}
+
+      {% block js %}
+
+      {% endblock js %}
+
       {% endblock content %}
     </main>
-
-    <!-- JS Block -->
-    {% block js %}
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    </script>
-    {% endblock js %}
 
        {% include "footer.html" %}
   </body>

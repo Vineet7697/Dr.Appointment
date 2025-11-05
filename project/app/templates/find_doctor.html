@@ -14,32 +14,28 @@
   class="relative w-full h-screen flex flex-col items-center justify-center text-white overflow-hidden px-4 sm:px-6 lg:px-12"
 >
   <!-- Background Image -->
- <div
-  class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-   style="background-image: url('{% static "images/images/hero.png" %}');"></div>
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed bg-[url('/static/images/images/hero.png')]"
+  ></div>
 
-  <!-- Overlay (optional for readability) -->
+  <!-- Overlay -->
   <div class="absolute inset-0 bg-black/40"></div>
 
-  <!-- Hero Text & Search -->
+  <!-- Hero Content -->
   <div class="relative z-10 text-center space-y-6 w-full max-w-4xl">
-    <!-- Heading -->
     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
       Your Doctor Your Health
     </h1>
-         <span class="text-2xl"> Find and Book</span>
+    <span class="text-2xl">Find and Book</span>
 
-    
-    <!-- SEARCH BAR -->
+    <!-- Search Bar -->
     <form
       method="get"
-      class="flex flex-col sm:flex-row justify-center items-center gap-1 mt-8"
+      class="flex flex-col sm:flex-row justify-center items-center  mt-8"
     >
-      <!-- City Input -->
+      <!-- Location Input -->
       <div class="relative w-full sm:w-48 md:w-64">
-        <div
-          class="flex items-center bg-white text-black px-4 py-2 rounded-lg border w-full"
-        >
+        <div class="flex items-center bg-white text-black px-4 py-2  border w-full">
           <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
           <input
             id="cityInput"
@@ -50,18 +46,12 @@
             autocomplete="off"
           />
         </div>
-        <ul
-          id="cityList"
-          class="hidden absolute top-full left-0 w-full bg-white border border-gray-300 mt-1 overflow-y-auto shadow-md z-20 max-h-40 text-black"
-        ></ul>
       </div>
 
       <!-- Disease Input -->
       <div class="flex w-full sm:w-auto">
         <div class="relative w-full sm:w-64 md:w-96">
-          <div
-            class="flex items-center bg-white text-black px-4 py-2 rounded-lg w-full"
-          >
+          <div class="flex items-center bg-white text-black px-4 py-2  w-full">
             <i class="fas fa-search mr-2 text-blue-600"></i>
             <input
               id="diseaseInput"
@@ -72,44 +62,33 @@
               autocomplete="off"
             />
           </div>
-          <ul
-            id="diseaseList"
-            class="hidden absolute top-full left-0 w-full bg-white border border-gray-300 mt-1 overflow-y-auto shadow-md z-20 max-h-40 text-black"
-          ></ul>
         </div>
       </div>
     </form>
 
-  
-    <!--  POPULAR SEARCHES -->
-    <div
-      class="flex flex-wrap items-center justify-center gap-4 text-white text-sm md:text-base mt-6">
-      <span class="font-semibold text-gray-200">Popular Searches:</span>
+    <!-- Popular Searches -->
+    <div class="flex flex-wrap items-center ml-32  gap-4 text-white text-sm md:text-base mt-6">
+      <span class="font-semibold  text-gray-200">Popular Searches:</span>
 
       <div class="flex items-center gap-2">
-        <i class="fas fa-stethoscope"></i> Dermatologist
+       <a href=""> Dermatologist</a>
       </div>
 
-      <span class="text-gray-400">|</span>
-
       <div class="flex items-center gap-2">
-        <i class="fas fa-baby"></i> Pediatrician
+      <a href="">  Pediatrician</a>
       </div>
 
-      <span class="text-gray-400">|</span>
-
       <div class="flex items-center gap-2">
-        <i class="fas fa-heartbeat"></i> Gynecologist
+        <a href="">Gynecologist</a>
       </div>
 
-      <span class="text-gray-400">|</span>
-
-      <div class="flex items-center gap-2">
-        <i class="fas fa-tooth"></i> Dentist
+      <div class="flex items-center gap-2"> 
+        other
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -172,6 +151,73 @@
 </div>
 
  
+</section>
+
+<section class="bg-white py-16">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-semibold text-gray-800">
+      Instant appointment with
+    </h2>
+    <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mt-2">
+      doctors. <span class="font-bold text-[#14BEF0]">Guaranteed.</span>
+    </h2>
+
+    <!-- Stats -->
+    <div class="flex flex-wrap justify-center gap-8 mt-10 text-gray-600">
+      <p><span class="font-bold text-gray-800">100,000+</span> Verified doctors</p>
+      <p><span class="font-bold text-gray-800">3M+</span> Patient recommendations</p>
+      <p><span class="font-bold text-gray-800">25M+</span> Patients/year</p>
+    </div>
+
+    <!-- Button -->
+    <div class="mt-10">
+      <a href="#"
+         class="bg-[#14BEF0] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-[#0ea5e9] transition">
+         Find me the right doctor
+      </a>
+    </div>
+
+    <!-- Rating -->
+    <div class="flex justify-center mt-8 text-green-400 text-2xl">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+
+    <!-- Reviews -->
+    <div class="grid md:grid-cols-3 gap-8 mt-12 text-left">
+      <div class="bg-gray-50 p-6 rounded-xl shadow">
+        <p class="text-gray-700 leading-relaxed">
+          I had severe pain in chest as well as blood in cough. I searched through a lot of pulmonologists
+          and finally consulted Dr. Indu Bubna. She quickly diagnosed pulmonary embolism and I was admitted
+          to ICU. Now I’m fine. If I had delayed, I wouldn’t be writing this. Thanks Practo!
+        </p>
+        <p class="mt-4 font-semibold text-gray-800">– Anupam</p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow">
+        <p class="text-gray-700 leading-relaxed">
+          Very easy to use, user interface is amazing. The option to book a cab truly shows how much the
+          app makers care about the patient’s health 👍
+        </p>
+        <p class="mt-4 font-semibold text-gray-800">– Anjani Sirivella</p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow">
+        <p class="text-gray-700 leading-relaxed">
+          Boon for patients. God bless who made this app. I would not recover so soon if this app wasn’t there.
+          Practo has doctors for common and complex diseases, but it should also focus on rare complications
+          where finding a suitable doctor is hard.
+        </p>
+        <p class="mt-4 font-semibold text-gray-800">– Anoop Kumar</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 {% endblock content %}
